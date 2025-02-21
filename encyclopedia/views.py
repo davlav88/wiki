@@ -99,7 +99,6 @@ def random_pick(request):
     if request.method == "GET":
         entries = util.list_entries()
         name = random.choice(entries)
-        content = get_entry(name)
 
         return render(request, "encyclopedia/wiki.html", {
             "name": name,
