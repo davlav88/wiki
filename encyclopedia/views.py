@@ -80,8 +80,6 @@ def edit(request):
         name = request.GET.get("name")
         content = util.get_entry(name)
 
-        print(name)
-
         return render(request, "encyclopedia/edit.html", {
             "name": name,
             "content": content
