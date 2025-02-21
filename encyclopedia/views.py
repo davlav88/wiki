@@ -22,8 +22,10 @@ def wiki(request, name):
             "content": markdown2.markdown(util.get_entry(name))
             })
         else:
+            message = "not found"
             return render(request, "encyclopedia/error.html", {
                 "name": name.capitalize(),
+                "message": message
             })
 
 
@@ -60,8 +62,10 @@ def create(request):
         entries_l = [entry.lower() for entry in entries]
 
         if name.lower() in entries_l:
+            message = "already exists"
             return render(request, "encyclopedia/error.html", {
-                "name": name
+                "name": name,
+                "message": message
             })
         else:
             save_entry(name, content)

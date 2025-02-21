@@ -9,9 +9,7 @@
 
      <form action="{% url 'edit' %}" method="post">
          {% csrf_token %}
-         <div class="form-group">
-            <input class="form-control" type="text" name="entry" placeholder="Entry name" value="{{ name }}" >
-         </div>
+         <h2>{{ name }}</h2>
          <div class="form-group">
             <label for="entry_content">Entry content</label>
             <textarea class="form-control" id="entry_content" name="entry_content" rows="3">{{ content }}</textarea>
